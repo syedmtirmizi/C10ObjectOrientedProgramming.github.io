@@ -1,0 +1,25 @@
+{
+  "name": "c10objectorientedprogramming.github.io",
+  "version": "1.0.0",
+  "description": "This github is to showcase my abilities to use Node.js specifically my Object Oriented Programming skills.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedmtirmizi/C10ObjectOrientedProgramming.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syedmtirmizi/C10ObjectOrientedProgramming.github.io/issues"
+  },
+  "homepage": "https://github.com/syedmtirmizi/C10ObjectOrientedProgramming.github.io#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
