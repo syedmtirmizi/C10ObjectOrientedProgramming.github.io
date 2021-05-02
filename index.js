@@ -1,14 +1,21 @@
 // Create a funciton to initialize the app
 
-    //include packages needed for this application
+//include packages needed for this application
     const fs = require('fs');
     const inquirer = require('inquirer');
     const path = require('path');
+
+//import classes
     const Manager = require('./lib/Manager')
     const Engineer = require('./lib/Engineer')
     const Intern = require('./lib/Intern')
+    const create = require("./lib/create") 
 
-    //create a array of questions for user input
+//create output pathway
+const OUT_DIR = path.resolve(__dirname, 'dist')
+const outDirPath = path.join(OUT_DIR, "teamWebPage.html")
+
+//create a array of questions for user input
     const questions = [
         {
             type: 'input',
@@ -34,65 +41,6 @@
 
     ];
 
-    // const questions2 = [
-    //     {
-    //         type: 'input',
-    //         name: 'name',
-    //         message: 'What is name of the Engineer?'
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'id',
-    //         message: 'What is the ID of the Engineer?'
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'email',
-    //         message: 'What is the e-mail of the Engineer?'
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'github',
-    //         message: 'What is the GitHub of the Engineer?'
-    //     },
-    //     {
-    //         type:'list',
-    //         name: 'team',
-    //         message: 'Would you like to add other team members?',
-    //         choices: ['Engineer', 'Intern', 'No more team members']
-    //     },
-
-    // ];
-
-    // const questions3 = [
-    //     {
-    //         type: 'input',
-    //         name: 'name',
-    //         message: 'What is name of the Intern?'
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'id',
-    //         message: 'What is the ID of the Intern?'
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'email',
-    //         message: 'What is the e-mail of the Intern?'
-    //     },
-    //     {
-    //         type: 'input',
-    //         name: 'school',
-    //         message: 'What school does the Intern go to?'
-    //     },
-    //     {
-    //         type:'list',
-    //         name: 'team',
-    //         message: 'Would you like to add other team members?',
-    //         choices: ['Engineer', 'Intern', 'No more team members']
-    //     },
-    // ];
-
     const team = [];
     const generateTeam = () => {
         inquirer
@@ -108,7 +56,7 @@
                             message: "What is the Manager's office number?",
                         },
                         {
-                            when: () => data1.role === 'Eningeer',
+                            when: () => data1.role === 'Engineer',
 
                             type: "input",
                             name: "github",
@@ -151,11 +99,11 @@
                             team.forEach((team) => {
                                 console.log(team);
                             });
-                            fs.writeFile(distPath, render(team), (err) => {
+                            fs.writeFile(outDirPath, create(team), (err) => {
                                 if (err) {
                                     throw err;
                                 }
-                                console.log("Success, team HTML is created!")
+                                console.log("Successful, team array exported!")
                             });
                         }
                     });
@@ -166,47 +114,6 @@
                 }
             });
     };
-
- 
-
-
-    // inquirer.prompt(questions)
-    // .then(function (data) {
-    //     if (data.team === 'Engineer') {
-    //         inquirer.prompt(questions2)
-    //         .then(function (data2) {
-    //             console.log(data2);
-    //             if (data2.team === 'Engineer') {
-    //                 inquirer.prompt(questions2);
-    //             };
-    //             if (data2.team === 'Intern') {
-    //                 inquirer.prompt(questions3);
-    //             };
-    //             let engineer = new Engineer (data2.name, data2.id, data2.email, data2.github);
-    //             console.log(engineer);
-    //         })
-            
-    //     };
-    //     if (data.team === 'Intern') {
-    //         inquirer.prompt(questions3)
-    //         .then(function (data3) {
-    //             console.log(data3);
-    //             if (data3.team === 'Engineer') {
-    //                 inquirer.prompt(questions2);
-    //             };
-    //             if (data3.team === 'Intern') {
-    //                 inquirer.prompt(questions3);
-    //             };
-    //             let intern = new Intern (data3.name, data3.id, data3.email, data3.school);
-    //             console.log(intern);
-    //         })
-    //     };
-    //     let employeeManager = new Manager (data.name, data.id, data.email, data.phone);
-    //     console.log(employeeManager);
-    // });
-
-// Function call to initialize app
-// init();
 
 generateTeam();
 

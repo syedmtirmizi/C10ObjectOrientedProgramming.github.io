@@ -1,3 +1,5 @@
+const Employee = require('./Employee.test');
+
 class Engineer {
     constructor (name, id, email, github) {
         super(name, id, email);
