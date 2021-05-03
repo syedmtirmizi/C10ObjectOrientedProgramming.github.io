@@ -1,0 +1,24 @@
+.jumbotron {
+    background-color: tomato;
+    text-align: center;
+    color: white;
+}
+
+.role-title {
+    background-color: #0645ad;
+    color: white;
+}
+
+
+.card {
+    margin:1%;
+    box-shadow: 5px 10px #888888;
+    padding: 1%;
+}
+
+.card:hover .role-title {
+    background-color:tomato;
+}
+
+
+

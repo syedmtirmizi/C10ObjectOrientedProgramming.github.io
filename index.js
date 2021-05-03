@@ -60,7 +60,7 @@ const outDirPath = path.join(OUT_DIR, "teamWebPage.html")
 
                             type: "input",
                             name: "github",
-                            message: "What is the Engineer's GitHub?",
+                            message: "What is the Engineer's GitHub username?",
                         },
                         {
                             when: () => data1.role === 'Intern',
