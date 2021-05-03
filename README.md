@@ -9,5 +9,5 @@ The index.js file can be found [here](index.js)
 Click [here](https://drive.google.com/file/d/1PQz0c-Q1j2iWBHwBUxsqh1qnDTIBtZQu/view) for a video demo of how the applicaiton works.
 
 
-The following is a screenshot of an example readme create: ![here](assets\myTeamDashboardScreenshot.JPG)
+The following is a screenshot of an example readme create: ![here](https://github.com/syedmtirmizi/C10ObjectOrientedProgramming.github.io/blob/main/assets/myTeamDashboardScreenshot.JPG?raw=true)
 
